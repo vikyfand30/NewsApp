@@ -23,14 +23,17 @@ import com.example.newsapp.models.News;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     private Context context;
     private List<News> list;
+    private List<News> listFull;
 
     public NewsAdapter(Context context, List<News> list) {
         this.context = context;
         this.list = list;
+        this.listFull = new ArrayList<>(list);
+
 
 
     }
@@ -40,8 +43,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_item, null, false);
 
-                RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                v.setLayoutParams(layoutParams);
+        RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        v.setLayoutParams(layoutParams);
 
 
         return new ViewHolder(v);
@@ -53,37 +56,37 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         final News news = list.get(position);
 
-                Glide.with(context).load(news.getImgNews()).into(holder.gmb);
-                holder.judul.setText(news.getTitleNews());
-                holder.tgl.setText(news.getDateNews().substring(0, 10) + " " + news.getDateNews().substring(11, 16));
-                if (news.getAuthorNews() == null) {
-                    holder.penulis.setText("Penulis Tidak Diketahui");
-                } else {
-                    holder.penulis.setText(news.getAuthorNews());
-                }
+        Glide.with(context).load(news.getImgNews()).into(holder.gmb);
+        holder.judul.setText(news.getTitleNews());
+        holder.tgl.setText(news.getDateNews().substring(0, 10) + " " + news.getDateNews().substring(11, 16));
+        if (news.getAuthorNews() == null) {
+            holder.penulis.setText("Penulis Tidak Diketahui");
+        } else {
+            holder.penulis.setText(news.getAuthorNews());
+        }
 
-                holder.cv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(context, DetailActivity.class);
-                        i.putExtra("imgNews", news.getImgNews());
-                        i.putExtra("titleNews", news.getTitleNews());
-                        if (news.getContentNews() == null) {
-                            i.putExtra("contentNews", "No Description");
-                        } else {
-                            i.putExtra("contentNews", news.getContentNews());
-                        }
-                        i.putExtra("dateNews", news.getDateNews().substring(0, 10) + " " + news.getDateNews().substring(11, 16));
-                        if (news.getAuthorNews() == null) {
-                            i.putExtra("authorNews", "Unknown Author");
-                        } else {
-                            i.putExtra("authorNews", news.getAuthorNews());
-                        }
-                        i.putExtra("sourceNews", news.getSourceNews());
-                        context.startActivity(i);
-                        ((Activity) context).overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                    }
-                });
+        holder.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, DetailActivity.class);
+                i.putExtra("imgNews", news.getImgNews());
+                i.putExtra("titleNews", news.getTitleNews());
+                if (news.getContentNews() == null) {
+                    i.putExtra("contentNews", "No Description");
+                } else {
+                    i.putExtra("contentNews", news.getContentNews());
+                }
+                i.putExtra("dateNews", news.getDateNews().substring(0, 10) + " " + news.getDateNews().substring(11, 16));
+                if (news.getAuthorNews() == null) {
+                    i.putExtra("authorNews", "Unknown Author");
+                } else {
+                    i.putExtra("authorNews", news.getAuthorNews());
+                }
+                i.putExtra("sourceNews", news.getSourceNews());
+                context.startActivity(i);
+                ((Activity) context).overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+            }
+        });
 
 
     }
