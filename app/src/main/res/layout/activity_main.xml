@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/appbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:theme="@style/AppTheme.AppBarOverlay">-->
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            app:popupTheme="@style/AppTheme.PopupOverlay" />-->
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"
+                    android:text="Categories"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    />
+
+                <HorizontalScrollView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+
+                    <LinearLayout
+
+                        android:gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+
+                        <LinearLayout
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_health"
+                                app:cardCornerRadius="10dp"
+                                android:layout_margin="10dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp">
+
+
+                                <ImageView
+                                    android:layout_margin="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:src="@drawable/ic_health"
+                                    android:layout_height="wrap_content"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Health"/>
+
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_business"
+                                app:cardCornerRadius="10dp"
+                                android:layout_margin="10dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp">
+                                <ImageView
+                                    android:layout_margin="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:src="@drawable/ic_business"
+                                    android:layout_height="wrap_content"/>
+
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Business"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_entertainment"
+                                app:cardCornerRadius="10dp"
+                                android:layout_margin="10dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp">
+
+                                <ImageView
+                                    android:layout_margin="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:src="@drawable/ic_entertainment"
+                                    android:layout_height="wrap_content"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Entertainment"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_sports"
+                                app:cardCornerRadius="10dp"
+                                android:layout_margin="10dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp">
+
+                                <ImageView
+                                    android:layout_margin="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:src="@drawable/ic_sports"
+                                    android:layout_height="wrap_content"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sports"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_technology"
+                                app:cardCornerRadius="10dp"
+                                android:layout_margin="10dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp">
+                                <ImageView
+                                    android:layout_margin="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:src="@drawable/ic_technology"
+                                    android:layout_height="wrap_content"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Technology"/>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_science"
+                                app:cardCornerRadius="10dp"
+                                android:layout_margin="10dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp">
+
+                                <ImageView
+                                    android:layout_margin="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:src="@drawable/ic_science"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Science"/>
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Trending News"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".Category.Business">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/news"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        tools:listitem="@layout/news_item"/>
+
+                </FrameLayout>
+            </LinearLayout>
+
+
+
+</RelativeLayout>
