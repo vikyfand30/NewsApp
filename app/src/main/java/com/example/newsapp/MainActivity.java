@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
+
 import com.example.newsapp.api.ApiService;
 import com.example.newsapp.models.News;
 import com.example.newsapp.utils.NewsAdapter;
@@ -37,14 +39,12 @@ public class MainActivity extends AppCompatActivity {
     ApiService api;
     ProgressDialog loading;
     CardView cvHealth, cvScience, cvTechnology, cvBusiness, cvSports, cvEntertainment;
-    SearchView searchView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        getSupportActionBar().hide();
         news = findViewById(R.id.news);
         cvBusiness = findViewById(R.id.cv_business);
         cvEntertainment = findViewById(R.id.cv_entertainment);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         initFunction();
     }
 
-    public void initFunction(){
+    public void initFunction() {
         cvBusiness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         api.getListAllNews("id", "6aff0138ea3342dfbc8eb5d4eaf35765").enqueue(new Callback<ResponseNews>() {
             @Override
             public void onResponse(Call<ResponseNews> call, Response<ResponseNews> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     hideDialog();
                     list = response.body().getNewsList();
                     news.setAdapter(new NewsAdapter(MainActivity.this, list));
@@ -146,8 +146,6 @@ public class MainActivity extends AppCompatActivity {
         if (loading.isShowing())
             loading.dismiss();
     }
-
-
 
 
 }

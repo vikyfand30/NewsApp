@@ -89,7 +89,6 @@ public class SportsActivity extends AppCompatActivity {
     }
 
 
-
     public void refresh(final String keyword) {
         loading = new ProgressDialog(this);
         loading.setCancelable(false);
@@ -97,7 +96,7 @@ public class SportsActivity extends AppCompatActivity {
         showDialog();
 
         if (keyword.length() > 0) {
-            api.getListSearch(keyword, "id", category,"publishedAt", key).enqueue(new Callback<ResponseNews>() {
+            api.getListSearch(keyword, "id", category, "publishedAt", key).enqueue(new Callback<ResponseNews>() {
                 @Override
                 public void onResponse(Call<ResponseNews> call, Response<ResponseNews> response) {
                     if (response.isSuccessful()) {
@@ -117,11 +116,11 @@ public class SportsActivity extends AppCompatActivity {
                     Toast.makeText(SportsActivity.this, "Gagal menyambung ke internet !", Toast.LENGTH_SHORT).show();
                 }
             });
-        } else{
+        } else {
             api.getListNews("id", category, key).enqueue(new Callback<ResponseNews>() {
                 @Override
                 public void onResponse(Call<ResponseNews> call, Response<ResponseNews> response) {
-                    if (response.isSuccessful()){
+                    if (response.isSuccessful()) {
                         hideDialog();
                         list = response.body().getNewsList();
                         news.setAdapter(new NewsAdapter(SportsActivity.this, list));
@@ -139,7 +138,6 @@ public class SportsActivity extends AppCompatActivity {
                 }
             });
         }
-
 
 
     }

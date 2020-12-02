@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
-            tools:listitem="@layout/news_item"/>
+            tools:listitem="@layout/news_item" />
 
     </FrameLayout>
 

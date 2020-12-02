@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 
 
-class SplashscreenActivity : Activity () {
+class SplashscreenActivity : Activity() {
     lateinit var handler: Handler
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

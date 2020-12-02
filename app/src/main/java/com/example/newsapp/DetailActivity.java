@@ -39,15 +39,15 @@ public class DetailActivity extends AppCompatActivity {
         tvSumber.setText("Lihat Lebih Lengkap");
         tvPenulis.setText(penulis);
 
-        if(getSupportActionBar() != null)getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
-    public void sumber (View view) {
+    public void sumber(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(sumber)));
     }
 
-    public void bindView(){
+    public void bindView() {
         tvImg = findViewById(R.id.img);
         tvJudul = findViewById(R.id.judul);
         tvDeskripsi = findViewById(R.id.deskripsi);

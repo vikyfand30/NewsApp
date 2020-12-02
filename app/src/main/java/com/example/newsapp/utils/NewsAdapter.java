@@ -35,7 +35,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         this.listFull = new ArrayList<>(list);
 
 
-
     }
 
     @Override
@@ -97,7 +96,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     }
 
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         private CardView cv;
         private ImageView gmb;
@@ -113,7 +111,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             penulis = itemView.findViewById(R.id.penulis);
         }
     }
-
 
 
 }
